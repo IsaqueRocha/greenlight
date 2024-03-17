@@ -20,16 +20,11 @@ test: ## test: Run all tests
 	@echo "--> testing..."
 	@go test -v $(PACKAGE)/...
 
-install: clean ## install: Compile sources and build binary
-	@echo "--> installing..."
-	@go install $(PACKAGE) || (echo "Compilation error" && exit 1)
-	@echo "Install OK"
-
-run: install ## run: Run your application
+run:  ## run: Run your application
 	@echo "--> running application..."
 	@go run ./cmd/api
 
-air: install ## air: Run your application with air plugin
+air: ## air: Run your application with air plugin
 	@echo "--> running application..."
 	@air
 
