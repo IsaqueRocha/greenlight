@@ -17,6 +17,7 @@ const (
 	defaultEnv        = "development"
 	defaultEnvMessage = "Application environment {development|staging|production}"
 	serverMessage     = "Server port to listen on"
+	errMessage        = "The server encountered a problem and could not process your request"
 )
 
 type config struct {
