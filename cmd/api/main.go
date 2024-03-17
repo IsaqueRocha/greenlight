@@ -15,9 +15,11 @@ const (
 	envStr            = "env"
 	defaultPort       = 4000
 	defaultEnv        = "development"
-	defaultEnvMessage = "Application environment {development|staging|production}"
-	serverMessage     = "Server port to listen on"
-	errMessage        = "The server encountered a problem and could not process your request"
+	defaultEnvMessage = "application environment {development|staging|production}"
+	serverMessage     = "server port to listen on"
+	errMessage        = "the server encountered a problem and could not process your request"
+	notFoundMessage   = "the requested resource could not be found"
+	methodMessage     = "the %s method is not supported"
 )
 
 type config struct {
