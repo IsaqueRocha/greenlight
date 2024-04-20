@@ -1,0 +1,12 @@
+all: True
+dir: "{{.InterfaceDir}}/mocks"
+disable-version-string: True
+dry-run: True
+filename: "{{.MockName}}.go"
+mockname: "{{.InterfaceName}}"
+outpkg: "mocks"
+quiet: False
+recursive: True
+with-expecter: True
+packages:
+  github.com/IsaqueRocha/greenlight:
