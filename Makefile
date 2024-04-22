@@ -2,11 +2,11 @@
 
 # VARIABLES
 PACKAGE="github.com/IsaqueRocha/greenlight"
-# ENVFILE=development.env
+ENVFILE=dev.env
 
 # IMPORT ENV VARIABLES
-# include $(ENVFILE)
-# export $(shell sed 's/=.*//' $(ENVFILE))
+include $(ENVFILE)
+export $(shell sed 's/=.*//' $(ENVFILE))
 
 # TARGETS
 default: usage
@@ -28,11 +28,11 @@ air: ## air: Run your application with air plugin
 	@echo "--> running application..."
 	@air
 
-# env: ## env: Simple test to verify ENV load
-# 	@echo "--> showing var in $(ENVFILE) ..."
-# 	@cat $(ENVFILE)
-# 	@echo "--> loading env vars..."
-# 	@echo $(APPLICATION)
+env: ## env: Simple test to verify ENV load
+	@echo "--> showing var in $(ENVFILE) ..."
+	@cat $(ENVFILE)
+	@echo "--> loading env vars..."
+	@echo $(GREENLIGHT_DB_DSN)
 
 usage: ## usage: List available targets
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m make\033[0m %s\n", $$2}'
